@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import photgrapher from "./assets/girl.png";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    username: "TidbitsJS",
+    totalAmount: 1556301900,
+  };
+
+  render() {
+    const { totalAmount, username } = this.state;
+    return (
+      <div className="App">
+        <img className="App__userpic" src={photgrapher} alt="user" />
+        <p className="App__username">Hello, {username}!</p>
+        <div className="App_amount"></div>
+      </div>
+    );
+  }
 }
 
 export default App;
