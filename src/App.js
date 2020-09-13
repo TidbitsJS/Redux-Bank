@@ -4,13 +4,18 @@ import formatNumber from "format-number";
 import photgrapher from "./assets/girl.png";
 import { store } from "./store/Store";
 
-const dispatchWith = (e) => {
+const dispatchWithDraw = (e) => {
   const amount = +e.target.dataset.amount;
   if (amount === 10000) {
     store.dispatch({ type: "WITHDRAW_10000", payload: amount });
   } else {
     store.dispatch({ type: "WITHDRAW_5000", payload: amount });
   }
+};
+
+const dispatchDonate = () => {
+  const amount = store.totalAmount;
+  store.dispatch({ type: "DONATE", payload: amount });
 };
 
 class App extends Component {
@@ -26,15 +31,17 @@ class App extends Component {
         </div>
 
         <section className="App__buttons">
-          <button data-amount="10000" onClick={dispatchWith}>
+          <button data-amount="10000" onClick={dispatchWithDraw}>
             Withdraw $10,000
           </button>
-          <button data-amount="5000" onClick={dispatchWith}>
+          <button data-amount="5000" onClick={dispatchWithDraw}>
             Withdraw $5000
           </button>
         </section>
 
-        <p className="App_giveaway">Give away all your cash to charity</p>
+        <p className="App_giveaway" onClick={dispatchDonate}>
+          Give away all your cash to charity
+        </p>
       </div>
     );
   }
