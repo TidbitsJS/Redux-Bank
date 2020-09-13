@@ -1,5 +1,11 @@
 export default (state, action) => {
   switch (action.type) {
+    case "CREDIT":
+      return {
+        ...state,
+        totalAmount: state.totalAmount + action.payload,
+      };
+
     case "WITHDRAW_10000":
       if (state.totalAmount < 10000) {
         return state;

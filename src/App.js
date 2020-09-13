@@ -18,6 +18,11 @@ const dispatchDonate = () => {
   store.dispatch({ type: "DONATE", payload: amount });
 };
 
+const dispatchCredit = (e) => {
+  const amount = +e.target.dataset.amount;
+  store.dispatch({ type: "CREDIT", payload: amount });
+};
+
 class App extends Component {
   render() {
     const { totalAmount, username } = store.getState();
@@ -29,6 +34,12 @@ class App extends Component {
           {formatNumber({ prefix: "$" })(totalAmount)}
           <p className="App__amount--info">Total Amount</p>
         </div>
+
+        <section className="App__buttons">
+          <button data-amount="50000" onClick={dispatchCredit}>
+            Credit $50,000
+          </button>
+        </section>
 
         <section className="App__buttons">
           <button data-amount="10000" onClick={dispatchWithDraw}>
