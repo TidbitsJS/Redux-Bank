@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import formatNumber from "format-number";
-import photgrapher from "./assets/girl.png";
+import photgrapher from "./assets/girl.jpeg";
 import { store } from "./store/Store";
 
 const dispatchWithDraw = (e) => {
