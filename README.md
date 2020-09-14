@@ -1,10 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#
+
 ### About 
 
 Simple application made using ReactJS & Redux. There is no use of `react-redux`. Project is based on basic fundamental concepts of `redux`. Methods like `store.getState()` , `store.dispatch()` and `store.subscribe()` are used to complete the project.
 
-#### Functionality 
+### Functionality 
 
 Basically, there are three simple action creators in the application.
 1) Credit Amount
@@ -14,6 +16,7 @@ Basically, there are three simple action creators in the application.
 `Credit` action creator adds the certain amount to the totalAmount of state, where as `WithDraw` subtracts some kind of amount from it.
 
 `GiveAway` sets amount value to 0. Hereafter, if user tries to `WithDraw` any amount, it won't happen. All cases are taken in care.
+
 
 ## Available Scripts
 
