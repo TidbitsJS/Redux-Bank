@@ -1,26 +1,23 @@
 import React, { Component } from "react";
-import "./App.css";
 import formatNumber from "format-number";
 import photgrapher from "./assets/girl.jpeg";
 import { store } from "./store/Store";
+import { credit, donate, withDraw } from "./actions/actions";
+
+import "./App.css";
 
 const dispatchWithDraw = (e) => {
   const amount = +e.target.dataset.amount;
-  if (amount === 10000) {
-    store.dispatch({ type: "WITHDRAW_10000", payload: amount });
-  } else {
-    store.dispatch({ type: "WITHDRAW_5000", payload: amount });
-  }
+  store.dispatch(withDraw(amount));
 };
 
 const dispatchDonate = () => {
-  const amount = store.totalAmount;
-  store.dispatch({ type: "DONATE", payload: amount });
+  store.dispatch(donate());
 };
 
 const dispatchCredit = (e) => {
   const amount = +e.target.dataset.amount;
-  store.dispatch({ type: "CREDIT", payload: amount });
+  store.dispatch(credit(amount));
 };
 
 class App extends Component {

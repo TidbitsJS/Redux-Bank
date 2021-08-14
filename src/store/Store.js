@@ -1,9 +1,7 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import reducer from "../reducers/Reducer";
+import logger from "redux-logger";
 
-const initialState = {
-  username: "TidbitsJS",
-  totalAmount: 1556301900,
-};
+const middlewares = [logger];
 
-export const store = createStore(reducer, initialState);
+export const store = createStore(reducer, applyMiddleware(...middlewares));

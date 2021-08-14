@@ -1,4 +1,9 @@
-export default (state, action) => {
+const initialState = {
+  username: "TidbitsJS",
+  totalAmount: 1556301900,
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case "CREDIT":
       return {
