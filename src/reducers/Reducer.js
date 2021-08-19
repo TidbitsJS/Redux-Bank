@@ -22,7 +22,6 @@ export default (state = initialState, action) => {
       }
 
     case "WITHDRAW_5000":
-      console.log(state.totalAmount);
       if (state.totalAmount < 5000) {
         return state;
       } else {
